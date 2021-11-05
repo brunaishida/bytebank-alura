@@ -1,15 +1,15 @@
 fun main() {
-    val titular = "Alex"
-    val conta = 1000
-    var saldo = 0.0
-    saldo += 300 + 2.0
+    val conta = Conta()
+    conta.titular = "Alex"
+    conta.numero = 1000
+    conta.saldo = 200.0
 
     println("Bem Vindo ao ByteBank")
-    println("titular $titular")
-    println("número da conta $conta")
-    println("saldo da conta $saldo")
+    println("titular ${conta.titular}")
+    println("número da conta ${conta.numero}")
+    println("saldo da conta ${conta.saldo}")
 
-    testaCondicao(saldo)
+    testaCondicao(conta.saldo)
 }
 
 fun testaCondicao(saldo: Double) {
