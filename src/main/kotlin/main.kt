@@ -1,21 +1,25 @@
 fun main() {
-    val conta = Conta()
-    conta.titular = "Alex"
-    conta.numero = 1000
-    conta.saldo = 200.0
+    val contaAlex = Conta()
+    contaAlex.titular = "Alex"
+    contaAlex.numero = 1000
+    contaAlex.addSaldo(200.0)
 
     println("Bem Vindo ao ByteBank")
-    println("titular ${conta.titular}")
-    println("número da conta ${conta.numero}")
-    println("saldo da conta ${conta.saldo}")
+    println("titular ${contaAlex.titular}")
+    println("número da conta ${contaAlex.numero}")
+    contaAlex.verificaSaldo()
+    
+    contaAlex.depositar(200.0)
+    contaAlex.sacar(100.0)
+    contaAlex.sacar(10000000.0)
 
-    testaCondicao(conta.saldo)
+    val contaBob = Conta()
+    contaBob.titular = "Bob"
+    contaBob.numero = 1001
+    contaBob.addSaldo(100.0)
+
+
+    contaAlex.transferir(100.0, contaBob)
+    contaAlex.transferir(10000000.0, contaBob)
 }
 
-fun testaCondicao(saldo: Double) {
-    when {
-        saldo > 0.0 -> println("conta é positiva")
-        saldo == 0.0 -> println("conta é neutra")
-        else -> println("conta é negativa")
-    }
-}
