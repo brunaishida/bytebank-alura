@@ -1,7 +1,9 @@
-class Conta {
-    var titular = ""
-    var numero = 0
-    private var saldo = 0.0
+class Conta(
+    val titular: String,
+    val numero: Int
+) {
+    var saldo = 0.0
+        private set
 
     fun addSaldo(valor: Double) {
         this.saldo += valor
